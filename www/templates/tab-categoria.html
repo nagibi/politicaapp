@@ -1,0 +1,19 @@
+﻿<ion-view view-title="Plano de Governo">
+    <ion-content>
+        <div class="padding">
+            <p>Escolhaum tema para ver a idéia para um plano de governo</p>
+            <h3>Temas:</h3>
+            <p ng-hide="planoCategorias.length > 0? true : false"><b>Nenhuma categoria adicionada</b>.</p>
+        </div>
+        <div class="list">
+            <a class="item item-icon-left item-icon-right" ng-repeat="categoria in planoCategorias" type="item-text-wrap" href="#/tab/categoria/{{categoria.PlanCategoryId}}">
+                <i class="icon ion-ios-compose-outline"></i>
+                <i class="icon ion-ios-arrow-right"></i>
+                {{categoria.Name}}
+            </a>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-footer bar-dark">
+        <h1 class="title" ng-click="carregarPlanoCategorias()">Verificar Novos Temas <i class="icon ion-refresh"></i></h1>
+    </ion-footer-bar>
+</ion-view>

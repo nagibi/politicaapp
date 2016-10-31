@@ -1,0 +1,20 @@
+﻿<ion-view view-title="Ecoporanga" class="bkg">
+    <ion-content>
+        <div class="padding">
+            <h4>Candidatos: </h4>
+        </div>
+            <p class="padding" ng-hide="candidatos.length > 0 ? true : false"><b>Nenhum candidato adicionado</b>.</p>
+            <div class="list card" ng-hide="candidatos.length > 0 ? false : true">
+
+                <a class="item item-avatar" ng-repeat="candidate in candidatos" type="item-text-wrap" href="#/tab/candidato/{{candidate.CandidateId}}">
+                    <span style="right:40px; position:absolute"><i style="right:-36px" class="icon ion-ios-arrow-right"></i></span>
+                    <img class="thumb" src="{{candidate.Photo}}">
+                    <h2>{{candidate.Name}}</h2>
+                    <p>Número: {{candidate.ElectoralNumber}}</p>
+                </a>
+            </div>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-footer bar-dark">
+        <h1 class="title" ng-click="carregarCandidatos(1)">Verificar Novos Candidatos <i class="icon ion-refresh"></i> </h1>
+    </ion-footer-bar>
+</ion-view>

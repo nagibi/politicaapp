@@ -1,0 +1,13 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+platforms/
+plugins/
+.vscode/typings/angularjs/angular.d.ts
+.vscode/typings/cordova/cordova.d.ts
+.vscode/typings/ionic/ionic.d.ts
+.vscode/typings/jquery/jquery.d.ts
+resources/android/splash/drawable-land-xhdpi-screen.pxr
+resources/icon_old.png
+resources/Thumbs.db

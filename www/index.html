@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Muda Ecops</title>
+
+    <!--<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">-->
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+    <!-- <script src="cordova.js"></script> -->
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="lib/angular-messages.min.js"></script>
+    <script src="lib/a0-angular-storage/dist/angular-storage.js"></script>
+    <script src="lib/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="lib/lodash/dist/lodash.min.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/services/planoCategoriaService.js"></script>
+    <script src="js/services/planoService.js"></script>
+    <script src="js/services/candidateService.js"></script>
+    <script src="js/services/profileService.js"></script>
+    <script src="js/services/eventoService.js"></script>
+    <script src="js/services/loginService.js"></script>
+    <script src="js/services/postService.js"></script>
+    <script src="js/services/eventoService.js"></script>
+    <script src="js/services/utilService.js"></script>
+    <script src="js/services/dbService.js"></script>
+    <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/controllers/categoriaCtrl.js"></script>
+    <script src="js/controllers/planoCtrl.js"></script>
+    <script src="js/controllers/plano-detalhelCtrl.js"></script>
+    <!--<script src="js/controllers/postCtrl.js"></script>-->
+    <script src="js/controllers/candidato-detalhelCtrl.js"></script>
+    <script src="js/controllers/candidatoCtrl.js"></script>
+    <script src="js/controllers/contatoCtrl.js"></script>
+    <script src="js/controllers/registrarCtrl.js"></script>
+    <script src="js/controllers/evento-detalhelCtrl.js"></script>
+    <script src="js/controllers/eventoCtrl.js"></script>
+    <script src="js/controllers/homeCtrl.js"></script>
+    <script id="templates/form-errors.html" type="text/ng-template">
+        <div class="form-error" ng-message="required">Por favor, preencha este campo.</div>
+        <div class="form-error" ng-message="email">Email inválido.</div>
+        <div class="form-error" ng-message="minlength">Senha deve possuir no mínimo 6 caracteres.</div>
+        <div class="form-error" ng-message="minlength">Somente número(s).</div>
+    </script> 
+</head>
+<body ng-app="starter">
+    <div style="line-height:20px">
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c"></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+    </div>
+
+</body>
+</html>

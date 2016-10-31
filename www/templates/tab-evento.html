@@ -1,0 +1,20 @@
+﻿<ion-view view-title="Ecoporanga">
+    <ion-content>
+        <div class="padding">
+            <h4>Veja onde estarei: </h4>
+        </div>
+        <ion-list>
+            <p class="padding" ng-hide="eventos.length > 0? true : false"><b>Nenhum evento adicionado</b>.</p>
+            <div class="list">
+                <a class="item item-icon-left item-icon-right" ng-repeat="evento in eventos" type="item-text-wrap" href="#/tab/evento/{{evento.EventId}}">
+                    <i class="icon ion-ios-calendar-outline"></i>
+                    <span style="right:40px; position:absolute">{{evento.FormatedDate}} <i style="right:-36px" class="icon ion-ios-arrow-right"></i></span>
+                    {{evento.Title}}
+                </a>
+            </div>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-footer bar-dark">
+        <h1 class="title" ng-click="carregarEventos(1)">Verificar Novos Eventos <i class="icon ion-refresh"></i> </h1>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,51 @@
+﻿<ion-view view-title="Ecoporanga">
+    <ion-content class="padding">
+        <span ng-bind-html="msg"></span>
+        <div class="row">
+            <div class="col">
+                <form name="form" novalidate="" ng-submit="form.$valid && cadastrar(user)" ng-hide="isLogged">
+                    <div class="list list-inset">
+                        
+                        <label class="item item-input" ng-class="{ 'has-error' : form.username.$invalid}">
+                            <input type="text" name="username" ng-model="user.Username" placeholder="Usuário" required>
+                        </label>
+                        <div class="form-errors" ng-messages="form.username.$error" ng-messages-include="templates/form-errors.html"></div>
+                        
+                        <label class="item item-input" ng-class="{ 'has-error' : form.email.$invalid}">
+                            <input type="email" name="email" ng-model="user.Email" placeholder="Email" required>
+                        </label>
+                        <div class="form-errors" ng-messages="form.email.$error" ng-messages-include="templates/form-errors.html"></div>
+                        
+                        <label class="item item-input" ng-class="{ 'has-error' : form.firstName.$invalid}">
+                            <input type="text" name="firstName" ng-model="user.FirstName" placeholder="Primeiro Nome" required>
+                        </label>
+                        <div class="form-errors" ng-messages="form.firstName.$error" ng-messages-include="templates/form-errors.html"></div>
+                        
+                        <label class="item item-input" ng-class="{ 'has-error' : form.lastName.$invalid}">
+                            <input type="text" name="lastName" ng-model="user.LastName" placeholder="Sobrenome" required>
+                        </label>
+                        <div class="form-errors" ng-messages="form.lastName.$error" ng-messages-include="templates/form-errors.html"></div>
+                        
+                        <label class="item item-input" ng-class="{ 'has-error' : form.password.$invalid}">
+                            <input type="password" name="password" ng-model="user.Password" placeholder="Senha" required ng-minlength="6">
+                        </label>
+                        <div class="form-errors" ng-messages="form.password.$error" ng-messages-include="templates/form-errors.html"></div>
+                        <div class="form-errors" ng-messages="form.minlength.$error" ng-messages-include="templates/form-errors.html"></div>
+                        
+                        <label class="item item-input" ng-class="{ 'has-error' : form.confirmpassword.$invalid}">
+                            <input type="password" name="confirmpassword" ng-model="user.Confirmpassword" placeholder="Confirmar Senha" required ng-minlength="6">
+                        </label>
+                        <div class="form-errors" ng-messages="form.confirmpassword.$error" ng-messages-include="templates/form-errors.html"></div>
+                        <div class="form-errors" ng-messages="form.minlength.$error" ng-messages-include="templates/form-errors.html"></div>
+                    </div>
+                    <button type="submit" class="button button-block button-balanced">
+                        Cadastrar <i class="icon ion-checkmark"></i>
+                    </button>
+                    <a href="#/tab/login" class="button button-block button-positive">
+                        Voltar <i class="icon ion-ios-undo"></i>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

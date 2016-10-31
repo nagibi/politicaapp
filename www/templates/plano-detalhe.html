@@ -1,0 +1,25 @@
+﻿<ion-view view-title="Ecoporanga">
+    <ion-content>
+        <div class="padding">
+            <h3 style="margin:10px 0 15px 0">{{plano.PlanCategoryName}}</h3>
+            <h4>{{plano.Title}}</h4>
+            <p ng-bind-html="plano.Description"></p>
+            <p><i class="icon ion-person"></i> {{plano.Author}}</p>
+            <br />
+            <h3 class="text-center" style="margin:10px 0">Comentários</h3>
+            <p ng-hide="comentarios.length > 0? true : false"><b>Nenhum comentário adicionado</b>.</p>
+        </div>
+        <ion-list>
+            <ion-item class="item-remove-animate" ng-repeat="comentario in comentarios" type="item-text-wrap">
+                <img class="thumb-comment" ng-src={{comentario.Profile}} /> <span style="line-height:35px">{{comentario.FullName}}</span>
+                <div class="clearfix"></div>
+                <p style="margin:5px 0; white-space:normal">{{comentario.Comment}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-footer bar-balanced">
+        <h1 class="title" ng-click="onClickComentar()">Comentar <i class="icon ion-chatbox"></i></h1>
+        <button class="button icon ion-refresh pull-right" ng-click="carregarComentarios()"></button>
+    </ion-footer-bar>
+</ion-view>
+

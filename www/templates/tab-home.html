@@ -1,0 +1,28 @@
+﻿<ion-view view-title="Ecoporanga" class="bkg">
+    <ion-content class="padding">
+        <ion-refresher pulling-text="Puxe para atualizar.." on-refresh="carregarPostsNovos(2)">
+        </ion-refresher>
+        <p ng-hide="posts.length > 0? true : false"><b>Nenhuma post adicionado</b>.</p>
+        <div class="list card" ng-repeat="post in posts" style="background:white">
+            <div class="item item-avatar">
+                <img ng-src={{post.Profile}} />
+                <h2 style="color:black; font-weight:bold; white-space:normal">{{post.Title}}</h2>
+                <p ng-bind="post.Updated | date:'dd/MM/yyyy'"></p>
+            </div>
+
+            <div class="item item-body">
+                <p ng-bind-html="post.Html"></p>
+                <p>
+                    <span style="float:left" class="vizualizacoes">{{post.CountLikes}} curtida(s)</span>
+                    <button style="float:right" ng-disabled="post.IsPostLike" class="button button-small button-positive" ng-click="onClickCurtir(post)">
+                        {{post.Curtir}} <i ng-class="post.IsPostLike == false ? 'icon ion-thumbsup' : 'icon ion-checkmark'"></i>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-footer bar-dark">
+        <!--<h1 class="title" ng-click="carregarPostsAntigos(2)">Puxe para atualizar<i class="icon ion-arrow-down-c"></i></h1>-->
+        <h1 class="title" ng-click="carregarPostsAntigos(2)">Exibir mais <i class="icon ion-plus"></i></h1>
+    </ion-footer-bar>
+</ion-view>

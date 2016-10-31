@@ -1,0 +1,52 @@
+angular.module('starter.services', [])
+
+.factory('Eventos', function () {
+    var eventos = [{
+        id: 0,
+        nome: 'Evento 00',
+        data: '01/02/2016',
+        local: 'ullamcorper augue',
+        texto: 'raesent ac ullamcorper augue, vitae placerat nulla. Phasellus placerat magna id placerat bibendum. Donec dui arcu, sagittis non ullamcorper pharetra, semper eget turpis',
+    }, {
+        id: 1,
+        nome: 'Evento 01',
+        data: '17/12/2016',
+        local: 'sagittis',
+        texto: 'Proin a pretium enim. Donec dolor eros, auctor et facilisis et, aliquet vel turpis',
+    }, {
+        id: 2,
+        nome: 'Evento 02',
+        data: '25/08/2016',
+        local: 'Phasellus',
+        texto: 'Proin pellentesque orci ac ligula condimentum interdum.',
+    }, {
+        id: 3,
+        nome: 'Evento 03',
+        data: '18/02/2016',
+        local: 'ullamcorper augue',
+        texto: 'Look at my mukluks llamcorper augue, vitae placerat nulla. Phasellus placerat magna id placerat bibendum. Donec dui arcu, sagittis non u!',
+    }, {
+        id: 4,
+        nome: 'Evento 04',
+        data: '01/05/2016',
+        local: 'pellentesque',
+        texto: 'Proin pellentesque orci ac ligula condimentum interdum. Proin pellentesque orci ac ligula condimentum interdum. Proin pellentesque orci ac ligula condimentum interdum. Proin pellentesque orci ac ligula condimentum interdum. Proin pellentesque orci ac ligula condimentum interdum.',
+    }];
+
+    return {
+        all: function () {
+            return eventos;
+        },
+        remove: function (evento) {
+            eventos.splice(eventos.indexOf(evento), 1);
+        },
+        get: function (chatId) {
+            for (var i = 0; i < eventos.length; i++) {
+                if (eventos[i].id === parseInt(chatId)) {
+                    return eventos[i];
+                }
+            }
+            return null;
+        }
+    };
+});

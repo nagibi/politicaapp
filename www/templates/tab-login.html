@@ -1,0 +1,75 @@
+﻿<ion-view view-title="Ecoporanga">
+    <ion-content>
+        <div class="row padding responsive-sm">
+            <span ng-bind-html="msg"></span>
+
+            <!--Login-->
+            <div ng-show="!isLogged">
+                <div class="col align-center">
+                    <img style="border-radius: 50%" ng-src={{Photo}} />
+                    <h4 ng-hide="!isLogged">{{unique_name}}</h4>
+                </div>
+                <div class="col">
+                    <form name="formLogin" novalidate="" ng-submit="formLogin.$valid && login(user)">
+                        <label class="item item-input" ng-class="{ 'has-error' : formLogin.username.$invalid && formLogin.username.$touched}">
+                            <input type="text" placeholder="Login" name="username" ng-model="user.username" required>
+                        </label>
+                        <div class="form-errors" ng-messages="formLogin.username.$error" ng-if="formLogin.password.$touched" ng-messages-include="templates/form-errors.html"></div>
+                        <label class="item item-input" ng-class="{ 'has-error' : formLogin.password.$invalid}">
+                            <input type="password" placeholder="Senha" name="password" ng-model="user.password" ng-minlength="6" required>
+                        </label>
+                        <div class="form-errors" ng-messages="formLogin.password.$error" ng-if="formLogin.password.$touched" ng-messages-include="templates/form-errors.html"></div>
+                        <div class="form-errors" ng-messages="formLogin.minlength.$error" ng-if="formLogin.password.$touched" ng-messages-include="templates/form-errors.html"></div>
+                        <button type="submit" class="button button-block button-balanced">
+                            Entrar <i class="icon ion-checkmark-round"></i>
+                        </button>
+                        <a href="#/tab/registrar" class="button button-block button-positive">
+                            Registrar <i class="icon ion-person-add"></i>
+                        </a>
+                    </form>
+                </div>
+            </div>
+
+            <!--Atualizar-->
+            <div ng-show="isLogged">
+                <div class="col">
+                    <form name="form" novalidate="" ng-submit="form.$valid && salvar(profile)">
+                        <div class="list list-inset">
+                            <label class="item item-input" ng-class="{ 'has-error' : form.contactEmail.$invalid && form.contactEmail.$touched}">
+                                <input type="email" name="contactEmail" ng-model="profile.ContactEmail" placeholder="Email" required>
+                            </label>
+                            <div class="form-errors" ng-messages="form.contactEmail.$error" ng-messages-include="templates/form-errors.html"></div>
+
+                            <label class="item item-input" ng-class="{ 'has-error' : form.firstName.$invalid && form.firstName.$touched}">
+                                <input type="text" name="firstName" ng-model="profile.FirstName" placeholder="Primeiro Nome" required>
+                            </label>
+                            <div class="form-errors" ng-messages="form.firstName.$error" ng-messages-include="templates/form-errors.html"></div>
+
+                            <label class="item item-input" ng-class="{ 'has-error' : form.lastName.$invalid && form.lastName.$touched}">
+                                <input type="text" name="lastName" ng-model="profile.LastName" placeholder="Sobrenome" required>
+                            </label>
+                            <div class="form-errors" ng-messages="form.lastName.$error" ng-messages-include="templates/form-errors.html"></div>
+
+                            <label class="item item-input" ng-class="{ 'has-error' : form.phoneNumber.$invalid && form.phoneNumber.$touched}">
+                                <input type="text" name="phoneNumber" ng-model="profile.PhoneNumber" ng-pattern="/^\d{0,10}(\.\d{1,11})?$/" placeholder="Telefone">
+                            </label>
+                            <div class="form-errors" ng-messages="form.phoneNumber.$error" ng-messages-include="templates/form-errors.html"></div>
+
+                            <label class="item item-input" ng-class="{ 'has-error' : form.cellPhone.$invalid && form.cellPhone.$touched}">
+                                <input type="text" name="cellPhone" ng-model="profile.CellPhone" ng-pattern="/^\d{0,10}(\.\d{1,11})?$/" placeholder="Celular">
+                            </label>
+                            <div class="form-errors" ng-messages="form.cellPhone.$error" ng-messages-include="templates/form-errors.html"></div>
+
+                        </div>
+                        <button type="submit" class="button button-block button-balanced">
+                            Salvar <i class="icon ion-checkmark"></i>
+                        </button>
+                    </form>
+                    <button ng-click="logout()" class="button button-block button-assertive">
+                        Sair <i class="icon ion-close-circled"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
